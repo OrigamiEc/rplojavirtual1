@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página App</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="https://kit.fontawesome.com/cee52a55b9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="imagenes/LogoOrigami.png" sizes="64x64">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" id="icono" class="icono">
+                    <i class="fas fa-share-alt"></i>
+                </a>
+                <div class="enlaces uno" id="enlaces">
+                    <h3>Compartir página</h3>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://origamiec.com/">Facebook</a>
+                    <a href="https://twitter.com/share?url=https://origamiec.com/">Twitter</a>
+                    <a href="https://plus.google.com/share?url=https://origamiec.com/">Google+</a>
+                    <a href="mailto:?body=https://origamiec.com/">Email</a>
+                    <a class="copi" href="javascript:getlink();">Copiar URL</a>
+                    <script>
+                        //<![CDATA[
+                        function getlink() {
+                            var aux = document.createElement("input");
+                            aux.setAttribute("value", window.location.href.split("?")[0].split("#")[0]);
+                            document.body.appendChild(aux);
+                            aux.select();
+                            document.execCommand("copy");
+                            document.body.removeChild(aux);
+                            var css = document.createElement("style");
+                            var estilo = document.createTextNode("#aviso {position:fixed; z-index: 9999999; widht: 120px; top:30%;left:50%;margin-left: -60px;padding: 20px; background: gold;border-radius: 8px;font-size: 14px;font-family: sans-serif;}");
+                            css.appendChild(estilo);
+                            document.head.appendChild(css);
+                            var aviso = document.createElement("div");
+                            aviso.setAttribute("id", "aviso");
+                            var contenido = document.createTextNode("URL copiada");
+                            aviso.appendChild(contenido);
+                            document.body.appendChild(aviso);
+                            window.load = setTimeout("document.body.removeChild(aviso)", 2000);
+                        }
+                        //]]>
+                    </script>
+                </div>
+            </nav>
+            <div class="textos">
+                <h1>Registro de la Propiedad del
+                Cantón Loja</h1>
+                <h3>Consíguelos en:</h3>
+                <a href="https://apps.apple.com/us/app/registro-propiedad-loja/id1483715396?l=es&ls=1">
+                   <i class="fab fa-apple fa-lg" id="font"></i>
+                    App Store
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.loja_app">
+                    <i class="fab fa-google-play" id="font"> </i>
+                    Google Play
+                </a>
+            </div>
+            <img src="imagenes/logo.png" alt="">
+        </div>
+    </header>
+    <div class="wave">
+        <div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    </div>
+    <script src="JavaScript/scritp.js"></script>
+</body>
+
+</html>
